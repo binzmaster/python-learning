@@ -6,11 +6,6 @@ repairs = [
     {"id": 1004, "device": "Monitor", "status": "เสร็จสิ้น", "cost": 800}
 ]
 
-df = pd.DataFrame(repairs)
-df.sort_values(
-    "cost", 
-    ascending=True,
-    inplace=True
-    )
-df=df.reset_index(drop=True)
-print (df)
+df= pd.DataFrame(repairs)
+status_count  =df["status"].count()
+print(status_count)
