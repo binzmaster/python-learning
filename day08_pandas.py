@@ -9,5 +9,6 @@ repairs = [
 
 df = pd.DataFrame(repairs)
 
-missing_status = df["status"].isna()
-print(missing_status)
+df["status"] = df["status"].fillna("รอตรวจสอบ")
+
+print(df)
