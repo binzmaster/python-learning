@@ -9,5 +9,13 @@ repairs = [
 ]
 
 df = pd.DataFrame(repairs)
+df["status"] = df["status"].fillna("รอตรวจสอบ")
+clean_repairs = df.dropna(subset=["cost"])
 
-df["status"] = df["ชื่อคอลัมน์"].fillna("ค่าที่ต้องการแทน")
+duplicate_count= clean_repairs.duplicated(subset=["id"]).sum()
+final_repairs = clean_repairs.drop_duplicates(subset=["id"],keep="last")
+summary_by_department = final_repairs.groupby("department")["cost"].agg(
+    ["sum", "mean", "min", "max"]
+    )
+
+print (summary_by_department)
