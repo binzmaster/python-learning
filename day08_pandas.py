@@ -10,8 +10,4 @@ repairs = [
 
 df = pd.DataFrame(repairs)
 
-missing_values = df.isna().sum()
-duplicate_count = df.duplicated(subset=["id"]).sum()
-
-print(missing_values)
-print(duplicate_count)
+df["status"] = df["ชื่อคอลัมน์"].fillna("ค่าที่ต้องการแทน")
