@@ -1,17 +1,21 @@
 import pandas as pd
 
 repairs = [
-    {"id": 1001, "device": "Computer", "status": "รอดำเนินการ", "cost": 3500},
-    {"id": 1002, "device": "Printer", "status": None, "cost": 1200},
-    {"id": 1003, "device": "Notebook", "status": "รอดำเนินการ", "cost": None},
-    {"id": 1004, "device": "Monitor", "status": "เสร็จสิ้น", "cost": 800}
+    {"id": 1001, "device": "Computer", "department": "IT", "status": "รอดำเนินการ", "cost": 3500},
+    {"id": 1002, "device": "Printer", "department": "HR", "status": "เสร็จสิ้น", "cost": None},
+    {"id": 1003, "device": "Notebook", "department": "IT", "status": None, "cost": 5500},
+    {"id": 1003, "device": "Notebook", "department": "IT", "status": None, "cost": 5500},
+    {"id": 1004, "device": "Monitor", "department": "HR", "status": "เสร็จสิ้น", "cost": 800}
 ]
 
 df = pd.DataFrame(repairs)
-missing_before = df.isna().sum()
-df["status"] = df["status"].fillna("รอตรวจสอบ")     
-clean_repairs= df.dropna(subset=["cost"])
-missing_after = clean_repairs.isna().sum()
-print(missing_before)
-print(clean_repairs)
-print(missing_after)
+df["status"] = df["status"].fillna("รอตรวจสอบ")
+clean_repairs = df.dropna(subset=["cost"])
+
+duplicate_count= clean_repairs.duplicated(subset=["id"]).sum()
+final_repairs = clean_repairs.drop_duplicates(subset=["id"],keep="last")
+summary_by_department = final_repairs.groupby("department")["cost"].agg(
+    ["sum", "mean", "min", "max"]
+    )
+
+print (summary_by_department)
