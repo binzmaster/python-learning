@@ -1,4 +1,7 @@
-message = "ระบบแจ้งซ่อมคอมพิวเตอร์ออนไลน์"
-print("ซ่อม" in message)
-print("ออนไลน์" in message)
-print("เครื่องพิมพ์" not in  message)
+code1 = "12345"
+code2 = "Python"
+code3 = "Python123"
+
+print(code1.isdigit())
+print(code2.isalpha())
+print(code3.isalnum())
