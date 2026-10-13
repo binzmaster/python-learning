@@ -1,7 +1,6 @@
-code1 = "12345"
-code2 = "Python"
-code3 = "Python123"
+filename = "report.pdf"
 
-print(code1.isdigit())
-print(code2.isalpha())
-print(code3.isalnum())
+if filename.endswith(".pdf"):
+    print("PDF file")
+else:
+    print("Other file")
