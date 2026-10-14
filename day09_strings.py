@@ -1,6 +1,7 @@
-filename = "report.pdf"
+filename = "  ITA_REPORT.PDF  "
 
-if filename.endswith(".pdf"):
-    print("PDF file")
+filename_clean = filename.strip().lower()
+if filename_clean.endswith(".pdf"):
+    print ("ไฟล์นี้เป็น PDF")
 else:
-    print("Other file")
+    print("ไม่ใช่ไฟล์ PDF")
