@@ -1,7 +1,12 @@
-filename = "  ITA_REPORT.PDF  "
+raw_text = "  IT , hr, FINANCE ,gis  "
 
-filename_clean = filename.strip().lower()
-if filename_clean.endswith(".pdf"):
-    print ("ไฟล์นี้เป็น PDF")
-else:
-    print("ไม่ใช่ไฟล์ PDF")
+departments_cleans = raw_text.split(",")
+
+number = 1
+for departments_clean in departments_cleans:
+    de_clean = departments_clean.upper().strip()
+    print(f"แผนก {number}: {de_clean}")
+    
+    
+    number = number+1
+
