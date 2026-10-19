@@ -45,3 +45,18 @@ if target in scores:
     print(f"ตำแหน่งใน index เป็น {scores.index(target)}")
 else :
     print(f"ไม่พบ {target}")
+#10_list
+costs = [4500, 1800, 12000, 1200, 2500]
+print (sum(costs))
+print(f"สูงสุด {max(costs)} ต่ำสุด {min(costs)}")
+print(f"ค่าเฉลี่ย {sum(costs)/len(costs):,.2f} บาท")
+count = 0
+for cost in costs:
+    if cost == max(costs):
+        print (f"ตำแหน่ง index {count}")
+    count = count+1
+
+# --- 10.6 tuple/set ---
+point = (13.75, 100.50)       # พิกัด (ละติจูด, ลองจิจูด)
+point[0] = 14.0               # TypeError: 'tuple' object does not support item assignment
+point.append(5)               # AttributeError: ไม่มี append
