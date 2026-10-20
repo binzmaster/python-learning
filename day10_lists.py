@@ -57,6 +57,19 @@ for cost in costs:
     count = count+1
 
 # --- 10.6 tuple/set ---
-point = (13.75, 100.50)       # พิกัด (ละติจูด, ลองจิจูด)
-point[0] = 14.0               # TypeError: 'tuple' object does not support item assignment
-point.append(5)               # AttributeError: ไม่มี append
+
+
+s = {1, 2, 2, 3, 3, 3}
+t = (7, 8, 9)
+print(len(s)) # 6
+print(t[1]) #8
+print(2 in s) # true
+print(s & {3, 4, 5})  # 3
+
+coord = (13.7563, 100.5018)
+ids_a = [101, 102, 103, 104, 102, 101]
+ids_b = [103, 104, 105, 106]
+
+lat,lon = coord
+print(f"ละติจูด {lat} ลองจิจูด {lon}")
+
