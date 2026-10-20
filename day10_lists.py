@@ -73,3 +73,10 @@ ids_b = [103, 104, 105, 106]
 lat,lon = coord
 print(f"ละติจูด {lat} ลองจิจูด {lon}")
 
+ids_a = set(ids_a)
+print(len(ids_a))
+
+ids_b = set(ids_b)
+
+print(sorted(ids_a & ids_b))
+print(sorted(ids_b - ids_a))
