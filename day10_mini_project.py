@@ -15,3 +15,17 @@ print(f"ค่าเฉลี่ย: {sum(costs)/len(costs):,.2f} บาท")
 print(f"แพงที่สุด 3 อันดับ: {sorted(costs,reverse=True)[:3]}")
 
 print (f"รายการที่แพงที่สุดอยู่ตำแหน่ง index: {costs.index(max(costs))}")
+
+costs.append(5000)
+
+print(f"หลังเพิ่ม: {costs}")
+costs.remove(min(costs))
+print(f"หลังลบถูกสุด: {costs}")
+print(f"ค่าเฉลี่ยใหม่: {sum(costs)/len(costs):,.2f} บาท") 
+result = sum(costs)/len(costs)
+add_result = []
+for cost in costs:
+    if cost > result :
+        add_result.append(cost)
+
+print(f"สูงกว่าค่าเฉลี่ย: {add_result}")
