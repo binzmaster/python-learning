@@ -62,3 +62,18 @@ else:
 
 print(repair)
 
+
+job = {"id": "J09", "dept": "HR", "status": "pending"}
+
+a = job.get("owner", "ไม่มี")
+b = "HR" in job
+c = "dept" in job
+d = job.pop("status")
+e = job.pop("status", "หายแล้ว")
+
+print(a) # ไม่มี
+print(b) # Error
+print(c) # HR
+print(d) # {"id": "J09", "dept": "HR"}
+print(e) #  หายแล้ว
+print(job) # {"id": "J09", "dept": "HR"}
