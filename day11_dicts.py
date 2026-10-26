@@ -33,3 +33,32 @@ repair["dept"] = "IT"
 repair["urgent"] = True
 
 print(repair)
+
+
+repair = {"id": "R02", "item": "pc", "dept": "IT"}
+
+repair["owner"] = "สมชาย"
+if "owner" in repair:
+    print(repair["owner"])
+else:
+    print("ยังไม่มีผู้รับผิดชอบ")
+
+repair = {"id": "R01", "item": "printer", "note": "ทดสอบ", "urgent": True}
+old_note = repair.pop("note")
+old_phone = repair.pop("phone","ไม่มี")
+print(old_note)
+print(old_phone)
+print(repair)
+
+repair = {"id": "R03", "item": "scanner", "dept": "GIS", "note": "รอตรวจ"}
+print(repair.get("owner","ยังไม่ระบุ"))
+repair["owner"] = "สมหญิง"
+repair["dept"] = "IT"
+if "note" in repair:
+    deleted_note = repair.pop("note")
+    print(f"ลบ note แล้ว: {deleted_note}")
+else:
+    print("ไม่มี note")
+
+print(repair)
+
