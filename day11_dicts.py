@@ -77,3 +77,40 @@ print(c) # HR
 print(d) # {"id": "J09", "dept": "HR"}
 print(e) #  หายแล้ว
 print(job) # {"id": "J09", "dept": "HR"}
+
+
+stock = {
+    "หมึกพิมพ์": 5,
+    "กระดาษ A4": 0,
+    "สายแลน": 12,
+    "เมาส์": 3
+}
+
+item = "เมาส์"
+
+if item in stock:
+    print(f"{item} เหลือ {stock[item]} ชิ้น")
+else:
+    print(f"{item} ไม่มีในระบบ" )
+
+
+
+
+stock = {
+    "หมึกพิมพ์": 5,
+    "กระดาษ A4": 0,
+    "สายแลน": 12,
+    "เมาส์": 3
+}
+item = "เมาส์" 
+amount = 3
+if item in stock:
+    if stock[item] < amount:
+        print(f"{item} ไม่พอ มีแค่ {stock[item]} ชิ้น")
+    else:
+        stock[item] = stock[item] - amount
+        print(f"เบิก {item} {amount} ชิ้น เหลือ {stock[item]} ชิ้น")
+else:
+    print(f"{item} ไม่มีในระบบ")
+print(stock)
+
