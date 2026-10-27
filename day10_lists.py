@@ -80,3 +80,4 @@ ids_b = set(ids_b)
 
 print(sorted(ids_a & ids_b))
 print(sorted(ids_b - ids_a))
+

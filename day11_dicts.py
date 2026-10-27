@@ -77,3 +77,18 @@ print(c) # HR
 print(d) # {"id": "J09", "dept": "HR"}
 print(e) #  หายแล้ว
 print(job) # {"id": "J09", "dept": "HR"}
+
+car = {"plate": "1กข", "color": "red", "owner": "สมศรี"}
+
+a = "red" in car 
+b = "color" in car 
+c = car.pop("owner") 
+d = car.get("owner", "ไม่มี") 
+e = car.pop("year", 2020)
+
+print(a) # true
+print(b) # true
+print(c) # สมศรี
+print(d) # ไม่มี
+print(e) # error
+print(car) # {'plate': '1กข', 'color': 'red'}
